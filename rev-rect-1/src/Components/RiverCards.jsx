@@ -34,23 +34,28 @@ function Card() {
       Size: 2900
     }
   ]
-    return <div className='bg-blue-200 border'>
-            <div className='w-full h-screen p-4 bg-blue-200 flex gap-10 justify-center items-center'>
-            {Data.map((elem, index) => (
-            <div key={index} className='w-sm h-80 bg-blue-100 rounded-xl overflow-hidden'>
-                <div className='w-full h-40'>
-                    <img className='w-full h-full object-cover' src={elem.image} alt="River Images" />
-                </div>
-                <div className='w-full h- screen p-4 py-4'>
-                    <h1 className='text-xl pb-4 font-semibold'>{elem.riverName}</h1>
-                    <p className='text-sm'>{elem.description}</p>
-                    <h1>hi there</h1>
-                </div>
+
+
+  return <>
+    <div className='bg-blue-200 border'>
+        <div className='w-full h-screen p-4 bg-blue-200 flex gap-10 justify-center items-center'>
+        {Data.map((elem, index) => (
+          <div key={index} className='w-sm h-84 bg-blue-100 rounded-xl overflow-hidden'>
+            <div className='w-full h-40'>
+              <img className='w-full h-full object-cover' src={elem.image} alt="River Images" />
             </div>
-            ))}
-        </div>
-        </div>
-    
+            <div className='w-full p-4 py-4'>
+              <h1 className='text-xl pb-4 font-semibold'>{elem.riverName}</h1>
+              <p className='text-sm'>{elem.description}</p>
+              <h1 className= {`text-sm border rounded-full w-fit p-2 ${elem.Size>1500 ? "bg-blue-400" : "bg-green-200"} `}>
+                    {elem.Size>1500 ? "Above 1.5k KMs" : "Below 1.5k KMs"}
+              </h1>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </>
 }
 
 
